@@ -201,7 +201,7 @@ def getFirstEntity(args):
   return ents
 
 
-def main():
+def main(cliargs=None):
     """ """
     # Create global options parser.
     #global gparser # only need for 'help' command (optional)
@@ -209,7 +209,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__.strip())
     parser.add_argument("--version",
                         action="version",
-                        version="%%(prog)s %s" % __version__[11:-2])
+                        version=__version__)
     parser.add_argument("-f", "--only-first",
         dest="first",
         default=False,
@@ -230,7 +230,7 @@ def main():
                         nargs="+",
                         help="One ore more XML files to search for entities")
 
-    args = parser.parse_args()
+    args = parser.parse_args(cliargs)
     if args.separator == '\\n':
       args.separator = '\n'
     elif args.separator == '\\t':
