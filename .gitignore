@@ -103,5 +103,10 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-# Editor: Kate
+# Editors
 *.kate-swp
+*~
+
+# Patch/Diff
+*.patch
+*.diff
